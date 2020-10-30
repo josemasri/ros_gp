@@ -1,11 +1,9 @@
-from uuid import UUID, uuid4
 
 TERMINAL = 'TERMINAL'
 FUNCTION = 'FUNCTION'
 
 
 class Node:
-
    def __init__(self, data,  type: str):
         self.children = [Node]
         self.data = data
