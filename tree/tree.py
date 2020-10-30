@@ -1,5 +1,10 @@
-mport numpy
+from numpy import array
+from random import randint, uniform,random
 
+vel = array ([0,0.5,1,1.5,2])
+dist = array ([0.5,1,1.5,2,2.5,3])
+listd = []
+listv = []
 class NodoArbol(object):
   def __init__(self):
     self.raiz = None
@@ -22,7 +27,7 @@ class NodoArbol(object):
   def esDer(self):
       return not self.der and self.raiz.der == self
   def esHoja(self):
-      return not (self.hijoDerecho or self.hijoIzquierdo)
+      return not (self.der or self.izq or self.ope)
 
   def tieneAlgunHijo(self):
       return self.izq or self.izq
@@ -49,19 +54,76 @@ class NodoArbol(object):
     else:
         self.raiz = NodoArbol(valor)
     self.tamano = self.tamano + 1
+   def sorteo(tam,arreglo):
+       rd=random.randint(0,tam-1)
+       if rd not in arreglo: 
+            arreglo.append(rd)
+            return rd
+       elif len(arreglo)<5:
+            rd=sorteo(tam,arreglo)
+       else: 
+            bandera=True
+            return "Error"
+
 
 def _agregar(self,valor,nivel):
+   # Método de árbol con crecimiento acotado (Grow method).
+   #Crear nodos de cualquier conjunto (funciones o terminales) si aún no se alcanza la profundidad máxima.
+   #En otro caso, tomar solamente terminales.
+
     if (self.tamano<tamMax):
-        if  (valor == ):
-            if nodoActual.tieneIzq():
-                self._agregar(valor,nodoActual.hIzq)
-            else:
-                nodoActual.Izq = NodoArbol(valor,raiz=nodoActual)
+        if ((valor ==  "<" )or(valor == ">")):
+                 self._agregar(valor,nodoActual.ope)
+                 var = "d"
+                 var2 = var+valor
+                 ind=sorteo(6,listd)
+                 if (ind == "Error"):
+                    
+                 else:
+                    var3 = var2+dist[ind]
+                    self.dato= var3 
+                    
+                    
+                
+        elif self.tieneIzq():
+                 self._agregar(valor,nodoActual.der)
+                 var = "v"
+                 var2 = var+valor
+                 ind=sorteo(6,listv)
+                 if (ind == "Error"):
+                    
+                 else:
+                     var3 = var2+vel[ind]
+                     self.dato= var3
         else:
-            if nodoActual.tieneDer():
-                self._agregar(clave,valor,nodoActualhDer)
-            else:
-                nodoActual.Der = NodoArbol(valor,padre=nodoActual)
-    
+                 self._agregar(valor,nodoActual.izq)
+                 var = "v"
+                 var2 = var+valor
+                ind=sorteo(6,listv)
+                 if (ind == "Error"):
+                    
+                 else:
+                    var3 = var2+vel[ind]
+                    self.dato= var3
+else:
+        if self.tieneIzq():
+                 self._agregar(valor,nodoActual.der)
+                  var = "v"
+                 var2 = var+valor
+                ind=sorteo(6,listv)
+                 if (ind == "Error"):
+                    
+                 else:
+                    var3 = var2+vel[ind]
+                    self.dato= var3
+        else:
+                 self._agregar(valor,nodoActual.izq)
+                  var = "v"
+                 var2 = var+valor
+                ind=sorteo(6,listv)
+                 if (ind == "Error"):
+                    
+                 else:
+                    var3 = var2+vel[ind]
+                    self.dato= var3
 def _recPreorden(self,valor,nivel):
-    if ()
