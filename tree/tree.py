@@ -82,9 +82,8 @@ def _agregar(self,valor,nivel):
                  else:
                     var3 = var2+dist[ind]
                     self.dato= var3 
-                    
-                    
-                
+                    self.tamano= self.tamano++
+                                    
         elif self.tieneIzq():
                  self._agregar(valor,nodoActual.der)
                  var = "v"
@@ -105,25 +104,6 @@ def _agregar(self,valor,nivel):
                  else:
                     var3 = var2+vel[ind]
                     self.dato= var3
-else:
-        if self.tieneIzq():
-                 self._agregar(valor,nodoActual.der)
-                  var = "v"
-                 var2 = var+valor
-                ind=sorteo(6,listv)
-                 if (ind == "Error"):
-                    
-                 else:
-                    var3 = var2+vel[ind]
-                    self.dato= var3
-        else:
-                 self._agregar(valor,nodoActual.izq)
-                  var = "v"
-                 var2 = var+valor
-                ind=sorteo(6,listv)
-                 if (ind == "Error"):
-                    
-                 else:
-                    var3 = var2+vel[ind]
-                    self.dato= var3
-def _recPreorden(self,valor,nivel):
+    else:
+        
+def _recPreorden(root):
